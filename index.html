@@ -473,7 +473,13 @@
       margin-bottom: 24px
     }
 
-    @media(max-width:768px), (hover:none), (prefers-reduced-motion:reduce) {
+    @media(max-width:768px) {
+      #hero {
+        height: 250vh
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
       #hero {
         height: 100vh
       }
@@ -1416,7 +1422,7 @@
     const RM = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     const MOBILE = window.matchMedia('(max-width:768px)').matches;
     const TOUCH = window.matchMedia('(hover:none)').matches;
-    const SCRUB = !MOBILE && !TOUCH && !RM;
+    const SCRUB = !RM;
 
     /* ═════════════════════════════════════════════════
        PARTICLES (Whisper-level)
